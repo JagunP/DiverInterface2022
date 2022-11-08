@@ -31,5 +31,14 @@ public class OxygenBar : MonoBehaviour
     private void Update()
     {
         SetOxygenLevel(iM.GetOxygenLevel());
+        if(iM.GetOxygenLevel() < 80 && iM.GetOxygenLevel() > 20)
+        {
+            slider.gameObject.transform.Find("Fill").GetComponent<Image>().color = new Color(1F, 0.3F, 0F);
+
+        }
+        else if(iM.GetOxygenLevel() < 20)
+        {
+            slider.gameObject.transform.Find("Fill").GetComponent<Image>().color = Color.red; 
+        }
     }
 }
